@@ -30,7 +30,6 @@ module.exports = ([type]) => {
       .then(device => {
         device.getSysInfo().then(info => {
           let deviceDetails;
-          const devIcon = { "--light": "💡", "--plug": "🔌" }[type];
 
           if (typeof info.light_state !== "undefined") {
             deviceDetails = {
