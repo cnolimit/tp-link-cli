@@ -1,51 +1,42 @@
 {
-  "lights":[
-     {
-        "ip":"192.168.0.178",
-        "name":"Bathroom Light",
-        "deviceId":"80121B3E8654AE0912C7A762B9B6D09618861EAC"
-     },
-     {
-        "ip":"192.168.0.165",
-        "name":"Bedroom Light",
-        "deviceId":"8012B1959F64C6C9AFEFFADC8EFF90EF1874AFBF"
-     },
-     {
-        "ip":"192.168.0.193",
-        "name":"Front Room Light",
-        "deviceId":"80123542DD915CB2E3A2881A2C0BDEB218999BA6"
-     },
-     {
-        "ip":"192.168.0.192",
-        "name":"Office Light",
-        "deviceId":"8012939F78A4388E44C32B3B866ED1D9188D4891"
-     },
-     {
-        "ip":"192.168.0.151",
-        "name":"Hallway Light",
-        "deviceId":"8012BFE94E99AA1AF060A3285E182E4D188DCD6F"
-     }
+  "lights": [
+    {
+      "ip": "192.168.0.178",
+      "name": "Bathroom Light"
+    },
+    {
+      "ip": "192.168.0.165",
+      "name": "Bedroom Light"
+    },
+    {
+      "ip": "192.168.0.193",
+      "name": "Front Room Light"
+    },
+    {
+      "ip": "192.168.0.192",
+      "name": "Office Light"
+    },
+    {
+      "ip": "192.168.0.151",
+      "name": "Hallway Light"
+    }
   ],
-  "plugs":[
-     {
-        "ip":"192.168.0.184",
-        "name":"TV Unit",
-        "deviceId":"80067C644FB6C36D05A409D576F0B3E0183744CA"
-     },
-     {
-        "ip":"192.168.0.135",
-        "name":"Bedroom Unit",
-        "deviceId":"80066D4F2E21258812F2CAB4F0E3C280197D1E29"
-     },
-     {
-        "ip":"192.168.0.121",
-        "name":"Bedroom Heater",
-        "deviceId":"8006437BE5292EB24BBD329C8AFF7C4C197DD5C0"
-     },
-     {
-        "ip":"192.168.0.181",
-        "name":"Front Room Heater",
-        "deviceId":"8006B38272161502CEA8F1BD67DDA0381B0E6F76"
-     }
+  "plugs": [
+    {
+      "ip": "192.168.0.184",
+      "name": "TV Unit"
+    },
+    {
+      "ip": "192.168.0.135",
+      "name": "Bedroom Unit"
+    },
+    {
+      "ip": "192.168.0.121",
+      "name": "Bedroom Heater"
+    },
+    {
+      "ip": "192.168.0.181",
+      "name": "Front Room Heater"
+    }
   ]
 }
