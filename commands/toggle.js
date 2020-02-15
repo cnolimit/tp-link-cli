@@ -19,6 +19,25 @@ module.exports = ([type, deviceName, _state]) => {
     const state = _state && _state.toLowerCase();
     let deviceTypeArray = types[type];
     let onOffState = states[state];
+    const toggleClient = clientList => {
+      for (let i = 0; i < clientList.length; i++) {
+        client
+          .getDevice({ host: clientList[i].ip })
+          .then(device => {
+            // https://github.com/plasticrake/tplink-smarthome-api#readme
+            const newState = { on: true, off: false }[state];
+            const devIcon = { "--light": "💡", "--plug": "🔌" }[type];
+            device.setPowerState(newState);
+
+            successMessage(
+              `Successfuly switched ${state} ${clientList[i].name} ${devIcon}`
+            );
+          })
+          .catch(() => {
+            errorMessage(`Failed to switch ${state} ${clientList[i].name}`);
+          });
+      }
+    };
 
     if (!deviceTypeArray) {
       errorMessage("Type does not exist. (--light | --plug)");
@@ -51,23 +70,8 @@ module.exports = ([type, deviceName, _state]) => {
       deviceTypeArray.forEach(d => {
         console.log(`name: '${d.name}'\n`);
       });
-      return;
     }
 
-    client
-      .getDevice({ host: deviceTypeArray[0].ip })
-      .then(device => {
-        // https://github.com/plasticrake/tplink-smarthome-api#readme
-        const newState = { on: true, off: false }[state];
-        const devIcon = { "--light": "💡", "--plug": "🔌" }[type];
-        device.setPowerState(newState);
-
-        successMessage(
-          `Successfuly switched ${state} ${deviceTypeArray[0].name} ${devIcon}`
-        );
-      })
-      .catch(() => {
-        errorMessage(`Failed to switch ${state} ${deviceTypeArray[0].name}`);
-      });
+    toggleClient(deviceTypeArray);
   }
 };
